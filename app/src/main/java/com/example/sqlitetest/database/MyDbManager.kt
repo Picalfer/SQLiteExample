@@ -5,7 +5,7 @@ import android.content.Context
 import android.database.sqlite.SQLiteDatabase
 
 class MyDbManager(context: Context) {
-    val myDbHelper = MyDbHelper(context) // создаем базу данных
+    private val myDbHelper = MyDbHelper(context) // создаем базу данных
     var db: SQLiteDatabase? = null // инструмент с помощью которого мы будем что-то делать с бд
 
     fun openDb() {
