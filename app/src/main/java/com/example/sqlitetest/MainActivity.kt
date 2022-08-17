@@ -13,8 +13,7 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        b = ActivityMainBinding.inflate(layoutInflater)
-        setContentView(b.root)
+        b = ActivityMainBinding.inflate(layoutInflater).also { setContentView(it.root) }
 
         b.button2.setOnClickListener {
             b.tvResult.text = ""

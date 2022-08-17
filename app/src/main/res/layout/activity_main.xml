@@ -23,26 +23,26 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
+        android:autofillHints=""
         android:ems="10"
         android:hint="@string/app_name"
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:autofillHints="" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/edContent"
         android:layout_width="0dp"
         android:layout_height="200dp"
+        android:autofillHints=""
         android:ems="10"
         android:gravity="top"
         android:hint="@string/app_name"
         android:inputType="textMultiLine|textPersonName"
         app:layout_constraintEnd_toEndOf="@+id/edTitle"
         app:layout_constraintStart_toStartOf="@+id/edTitle"
-        app:layout_constraintTop_toBottomOf="@+id/edTitle"
-        android:autofillHints="" />
+        app:layout_constraintTop_toBottomOf="@+id/edTitle" />
 
     <Button
         android:id="@+id/button2"

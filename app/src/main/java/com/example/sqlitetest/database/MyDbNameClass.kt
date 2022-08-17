@@ -19,4 +19,4 @@ object MyDbNameClass {
     const val SQL_DELETE_TABLE = "DROP TABLE IF EXISTS $TABLE_NAME"
 }
 
-        // 0        title       content
+// 0        title       content

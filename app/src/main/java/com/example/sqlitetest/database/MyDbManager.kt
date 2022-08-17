@@ -6,7 +6,7 @@ import android.database.sqlite.SQLiteDatabase
 
 class MyDbManager(context: Context) {
     private val myDbHelper = MyDbHelper(context) // создаем базу данных
-    var db: SQLiteDatabase? = null // инструмент с помощью которого мы будем что-то делать с бд
+    private var db: SQLiteDatabase? = null // инструмент с помощью которого мы будем что-то делать с бд
 
     fun openDb() {
         db = myDbHelper.writableDatabase
@@ -20,19 +20,22 @@ class MyDbManager(context: Context) {
         db?.insert(MyDbNameClass.TABLE_NAME, null, values)
     }
 
-    fun readDbData() : ArrayList<String> { // если хотим считать информацию с базы данных
+    fun readDbData(): ArrayList<String> { // если хотим считать информацию с базы данных
         val dataList = ArrayList<String>()
 
-        val cursor = db?.query(MyDbNameClass.TABLE_NAME,
+        val cursor = db?.query(
+            MyDbNameClass.TABLE_NAME,
             null,
             null,
             null,
             null,
             null,
-            null)
+            null
+        )
 
         while (cursor?.moveToNext()!!) {
-            val dataText = cursor.getString(cursor.getColumnIndexOrThrow(MyDbNameClass.COLUMN_NAME_TITLE))
+            val dataText =
+                cursor.getString(cursor.getColumnIndexOrThrow(MyDbNameClass.COLUMN_NAME_TITLE))
             dataList.add(dataText.toString())
         }
         cursor.close()
@@ -43,6 +46,3 @@ class MyDbManager(context: Context) {
         myDbHelper.close()
     }
 }
-
-// этот класс нужен чтобы кратко с помощью его функций пользоваться бд
-// https://www.youtube.com/watch?v=tQot9NMbtiw&t=324s&ab_channel=NecoRu
